@@ -1,26 +1,448 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* ===== DESIGN TOKENS & THEME ===== */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* --- Color Palette (Material You / Homoeoglow) --- */
+  --color-primary: #005e50;
+  --color-primary-container: #1d7868;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #a9fde9;
+  --color-secondary: #3a6a00;
+  --color-secondary-container: #b8f47f;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #3f7105;
+  --color-tertiary: #4a564d;
+  --color-tertiary-container: #626e65;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #e3f0e4;
+  --color-surface: #f7faf5;
+  --color-surface-dim: #d8dbd6;
+  --color-surface-bright: #f7faf5;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f1f4f0;
+  --color-surface-container: #ecefea;
+  --color-surface-container-high: #e6e9e4;
+  --color-surface-container-highest: #e0e3df;
+  --color-on-surface: #191c1a;
+  --color-on-surface-variant: #3e4946;
+  --color-outline: #6e7976;
+  --color-outline-variant: #bec9c5;
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error: #ffffff;
+  --color-on-error-container: #93000a;
+  --color-inverse-surface: #2d312e;
+  --color-inverse-on-surface: #eff2ed;
+  --color-inverse-primary: #83d6c2;
+  --color-surface-tint: #016b5b;
+  --color-primary-fixed: #9ff2de;
+  --color-primary-fixed-dim: #83d6c2;
+  --color-on-primary-fixed: #00201a;
+  --color-on-primary-fixed-variant: #005144;
+  --color-secondary-fixed: #b8f47f;
+  --color-secondary-fixed-dim: #9dd766;
+  --color-on-secondary-fixed: #0d2000;
+  --color-on-secondary-fixed-variant: #2a5000;
+  --color-tertiary-fixed: #d9e6da;
+  --color-tertiary-fixed-dim: #bdcabe;
+  --color-on-tertiary-fixed: #131e17;
+  --color-on-tertiary-fixed-variant: #3e4a41;
+  --color-background: #f7faf5;
+  --color-on-background: #191c1a;
+  --color-surface-variant: #e0e3df;
+
+  /* --- Typography --- */
+  --font-headline: "Noto Serif", serif;
+  --font-body: "Manrope", sans-serif;
+  --font-label: "Manrope", sans-serif;
+
+  /* --- Border Radius --- */
+  --radius-sm: 0.125rem;
+  --radius-DEFAULT: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+  --radius-full: 0.75rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ===== GLOBAL RESETS & BASE STYLES ===== */
+:root {
+  --animation-duration: 0.6s;
+  --animation-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== MATERIAL SYMBOLS ===== */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+}
+
+.material-symbols-filled {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* ===== EDITORIAL GRID ===== */
+.editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+/* ===== KEYFRAME ANIMATIONS ===== */
+
+/* Fade in from below on scroll reveal */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Fade in from left */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade in from right */
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scale and fade in */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Gentle float animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* Subtle shimmer */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Gradient movement */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Pulse glow */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(0, 94, 80, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 30px 10px rgba(0, 94, 80, 0.08);
+  }
+}
+
+/* Rotate in */
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    transform: rotate(-8deg) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+/* Blob morph */
+@keyframes blobMorph {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+}
+
+/* Line reveal */
+@keyframes lineReveal {
+  from {
+    width: 0;
+  }
+  to {
+    width: 5rem;
+  }
+}
+
+/* Stagger children reveal */
+@keyframes staggerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== ANIMATION UTILITY CLASSES ===== */
+.animate-fade-in-up {
+  animation: fadeInUp var(--animation-duration) var(--animation-ease) forwards;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft var(--animation-duration) var(--animation-ease) forwards;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight var(--animation-duration) var(--animation-ease) forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn var(--animation-duration) var(--animation-ease) forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}
+
+.animate-gradient-shift {
+  background-size: 300% 300%;
+  animation: gradientShift 8s ease infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.animate-blob-morph {
+  animation: blobMorph 12s ease-in-out infinite;
+}
+
+.animate-line-reveal {
+  animation: lineReveal 0.8s var(--animation-ease) forwards;
+}
+
+/* Stagger delay utilities */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+
+/* ===== INTERSECTION OBSERVER REVEAL ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s var(--animation-ease), transform 0.8s var(--animation-ease);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s var(--animation-ease), transform 0.8s var(--animation-ease);
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s var(--animation-ease), transform 0.8s var(--animation-ease);
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.8s var(--animation-ease), transform 0.8s var(--animation-ease);
+}
+
+.reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ===== HOVER EFFECTS ===== */
+
+/* Card lift hover */
+.hover-lift {
+  transition: transform 0.4s var(--animation-ease), box-shadow 0.4s var(--animation-ease);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px -12px rgba(0, 94, 80, 0.15);
+}
+
+/* Card glow hover */
+.hover-glow {
+  transition: box-shadow 0.4s var(--animation-ease);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 40px -5px rgba(0, 94, 80, 0.15), 0 10px 40px -10px rgba(58, 106, 0, 0.1);
+}
+
+/* Magnetic hover (for icons) */
+.hover-magnetic {
+  transition: transform 0.3s ease;
+}
+
+.hover-magnetic:hover {
+  transform: scale(1.15) rotate(-2deg);
+}
+
+/* Image zoom on hover */
+.hover-zoom-img {
+  overflow: hidden;
+}
+
+.hover-zoom-img img {
+  transition: transform 0.7s var(--animation-ease);
+}
+
+.hover-zoom-img:hover img {
+  transform: scale(1.08);
+}
+
+/* Underline sweep on hover */
+.hover-underline-sweep {
+  position: relative;
+}
+
+.hover-underline-sweep::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-secondary);
+  transition: width 0.4s var(--animation-ease);
+}
+
+.hover-underline-sweep:hover::after {
+  width: 100%;
+}
+
+/* Button ripple effect */
+.hover-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-ripple::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.25) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.hover-ripple:hover::after {
+  opacity: 1;
+}
+
+/* Text gradient on hover */
+.hover-text-gradient {
+  transition: background-size 0.4s ease;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-size: 0% 100%;
+}
+
+.hover-text-gradient:hover {
+  -webkit-text-fill-color: transparent;
+  background-size: 100% 100%;
+}
+
+/* ===== SCROLLBAR ===== */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ===== RESPONSIVE HELPERS ===== */
+@media (max-width: 768px) {
+  .editorial-grid {
+    grid-template-columns: 1fr;
+  }
 }
