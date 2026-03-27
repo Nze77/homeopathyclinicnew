@@ -36,8 +36,8 @@ export default function Navbar() {
       >
         <div className="flex justify-between items-center max-w-7xl mx-auto px-8 py-4">
           <Link href="/" className="flex items-center group">
-            <div className="relative w-48 h-10 transition-transform duration-500 group-hover:scale-[1.02]">
-              <Image src="/logo.png" alt="Homoeoglow" fill className="object-contain object-left" sizes="192px" priority />
+            <div className="relative w-64 h-14 transition-transform duration-500 group-hover:scale-[1.02]">
+              <Image src="/logo.png" alt="Homoeoglow" fill className="object-contain object-left" sizes="256px" priority />
             </div>
           </Link>
           <div className="hidden md:flex items-center gap-8">

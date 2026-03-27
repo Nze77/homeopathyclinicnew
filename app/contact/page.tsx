@@ -193,13 +193,13 @@ export default function ContactPage() {
                   health directly to your inbox.
                 </p>
               </div>
-              <div className="flex w-full md:w-auto gap-2">
+              <div className="flex flex-col md:flex-row w-full md:w-auto gap-4 md:gap-2">
                 <input
                   className="flex-grow md:w-80 bg-surface-container-lowest border-none px-6 py-4 rounded-full focus:ring-2 focus:ring-primary outline-none"
                   placeholder="Email Address"
                   type="email"
                 />
-                <button className="bg-primary text-on-primary px-8 py-4 rounded-full font-bold hover:bg-emerald-900 transition-colors">
+                <button className="bg-primary text-on-primary px-8 py-4 rounded-full font-bold hover:bg-emerald-900 transition-all active:scale-95">
                   Subscribe
                 </button>
               </div>

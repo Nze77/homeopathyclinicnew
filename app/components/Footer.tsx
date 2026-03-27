@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -6,12 +7,11 @@ export default function Footer() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto px-8">
         {/* Brand Column */}
         <div className="col-span-1 md:col-span-2">
-          <span
-            className="text-3xl text-lime-400 mb-4 block"
-            style={{ fontFamily: "var(--font-headline)" }}
-          >
-            Homoeoglow
-          </span>
+          <Link href="/" className="block mb-6">
+            <div className="relative w-64 h-14 transition-transform duration-300 hover:scale-[1.02]">
+              <Image src="/logo.png" alt="Homoeoglow" fill className="object-contain object-left brightness-0 invert" sizes="256px" />
+            </div>
+          </Link>
           <p className="text-emerald-100/70 max-w-md leading-relaxed mb-6">
             Transforming health through the power of nature and clinical
             precision. We believe in the synergy of homeopathy, nutrition, and

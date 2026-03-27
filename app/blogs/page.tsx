@@ -55,8 +55,9 @@ export default function BlogsPage() {
           <ScrollReveal>
             <div className="grid grid-cols-12 gap-8 items-end">
               <div className="col-span-8">
-                <span className="text-secondary font-bold tracking-[0.2em] uppercase text-xs mb-4 block">The Journal</span>
-                <h1 className="text-primary leading-tight italic tracking-tight">Health &amp; Wellness Insights</h1>
+                <h1 className="font-headline text-6xl md:text-7xl text-primary leading-tight tracking-tight mb-8">
+                  Wellness <br /><span className="italic font-normal">Blog</span>
+                </h1>
               </div>
               <div className="col-span-4 border-l border-outline-variant/30 pl-8 pb-2">
                 <p className="text-on-surface-variant font-light leading-relaxed">A curated collection of clinical wisdom and holistic lifestyle guidance.</p>
@@ -68,7 +69,7 @@ export default function BlogsPage() {
         {/* Mobile Hero */}
         <section className="px-6 mb-8 md:hidden">
           <ScrollReveal>
-            <h2 className="text-primary mb-2 text-2xl">Wellness Blog</h2>
+            <h2 className="font-headline text-5xl text-primary leading-tight tracking-tight mb-4">Wellness <span className="italic font-normal">Blog</span></h2>
             <p className="text-on-surface-variant leading-relaxed max-w-xs">Insights on clinical excellence and natural healing.</p>
           </ScrollReveal>
           <div className="flex gap-3 overflow-x-auto pb-4 mt-6 no-scrollbar -mx-6 px-6">

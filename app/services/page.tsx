@@ -282,14 +282,14 @@ export default function ServicesPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="max-w-7xl mx-auto px-8 mb-24">
+        <section className="max-w-7xl mx-auto px-6 md:px-8 mb-12">
           <ScrollReveal>
-            <div className="bg-emerald-900 rounded-3xl p-16 relative overflow-hidden text-center">
-              <div className="relative z-10">
-                <h2 className="font-headline text-4xl md:text-5xl text-white mb-6">
+             <div className="bg-emerald-900 rounded-3xl p-8 md:p-16 relative overflow-hidden flex flex-col items-center text-center">
+              <div className="relative z-10 flex flex-col items-center">
+                <h2 className="font-headline text-4xl md:text-5xl text-white mb-6 max-w-2xl mx-auto">
                   Ready for your transformation?
                 </h2>
-                <p className="text-emerald-100/70 text-lg mb-10 max-w-2xl mx-auto">
+                <p className="text-emerald-100/70 text-lg mb-10 max-w-xl mx-auto">
                   Schedule a one-on-one consultation with our specialists to
                   create a personalized wellness roadmap.
                 </p>

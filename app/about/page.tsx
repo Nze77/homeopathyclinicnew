@@ -15,10 +15,12 @@ export default function AboutPage() {
         <section className="max-w-7xl mx-auto px-6 md:px-8 py-20 editorial-grid gap-y-12">
           <div className="col-span-full md:col-span-7">
             <ScrollReveal>
-              <span className="text-secondary font-bold tracking-widest uppercase text-sm block mb-6">Our Essence</span>
-              <h1 className="text-primary leading-tight mb-8">
-                Healing naturally, <br /><span className="italic font-normal">glowing beautifully.</span>
+              <h1 className="font-headline text-6xl md:text-7xl text-primary leading-tight tracking-tight mb-8">
+                Our <br /><span className="italic font-normal">Essence</span>
               </h1>
+              <h2 className="text-2xl md:text-3xl text-emerald-800/80 leading-tight mb-8 font-serif">
+                Healing naturally, <span className="italic">glowing beautifully.</span>
+              </h2>
               <p className="text-xl text-on-surface-variant max-w-xl leading-relaxed">
                 At Homoeoglow, we merge the ancient wisdom of homeopathy with modern clinical excellence to provide a sanctuary for your total well-being.
               </p>
