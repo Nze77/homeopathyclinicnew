@@ -4,7 +4,6 @@ import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ScrollReveal from "../components/ScrollReveal";
-import MobileBottomNav from "../components/MobileBottomNav";
 
 const IMG = {
   featured: "https://lh3.googleusercontent.com/aida-public/AB6AXuC-1XEoIMDqubTRGXoHLYmLIUteQm_D6EAT8KA7I_WV_E2F55bGTjTuNKLDvKeI61jx_zzXkl8XAOvoXeq67xtOX8UNr2mxWkd4fEShmFPZKhvJ1coR4VHnyz8H-9Yb0yBIIZMNiaU4YCv4h5KTa66st79X5pfPK7Ak0ZLBoPYnUF5K12jVI3uQ-PWIHkaFQxNoml2Fr1S3ZYR5atnY6JakkjEYM7EEhw6UTFwp4yqWyze4lSu9LWUSW5pOVy5mecW5UkP8E9cHrWU",
@@ -139,7 +138,6 @@ export default function BlogsPage() {
           </div>
         </section>
       </main>
-      <MobileBottomNav />
       <Footer />
     </>
   );

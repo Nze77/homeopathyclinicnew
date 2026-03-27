@@ -5,7 +5,6 @@ import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ScrollReveal from "../components/ScrollReveal";
-import MobileBottomNav from "../components/MobileBottomNav";
 
 export default function AboutPage() {
   return (
@@ -14,7 +13,7 @@ export default function AboutPage() {
       <main className="flex-1 pt-24">
         {/* Hero Section */}
         <section className="max-w-7xl mx-auto px-6 md:px-8 py-20 editorial-grid gap-y-12">
-          <div className="col-span-12 md:col-span-7">
+          <div className="col-span-full md:col-span-7">
             <ScrollReveal>
               <span className="text-secondary font-bold tracking-widest uppercase text-sm block mb-6">Our Essence</span>
               <h1 className="text-primary leading-tight mb-8">
@@ -25,7 +24,7 @@ export default function AboutPage() {
               </p>
             </ScrollReveal>
           </div>
-          <div className="col-span-12 md:col-span-5 relative">
+          <div className="col-span-full md:col-span-5 relative">
             <ScrollReveal variant="scale" delay={200}>
               <div className="aspect-[4/5] overflow-hidden rounded-xl shadow-2xl relative z-10 hover-zoom-img">
                 <Image src="https://lh3.googleusercontent.com/aida-public/AB6AXuCllJmizNC9WahGVhOqYnQe2Vs1hbz7RSUQFjTKhXsDBYYtUBdXAPrvgJV9AvuHjZkkuR__lsJui6Scd-YFK4ph-lN9_wjCOzwn80Lg8ho_R7oNcqkO4ygcQC3Z-vaWXFzZl8LJ_fzv5rR_4-wHCYwliCC3KR3huHx2hqPCskf2lgLqE5u37YUo7TWVQwoTdYP5_78AGsNXqCfI_RC-e41-grK55gEY_SDtJPFG-IVHJg6bb1O-TCLY4u_CzT0YEaCIGqC_TJ3QwZo" alt="Clinical Sanctuary" fill className="object-cover" sizes="(max-width:768px) 100vw, 40vw" />
@@ -159,7 +158,6 @@ export default function AboutPage() {
           </ScrollReveal>
         </section>
       </main>
-      <MobileBottomNav />
       <Footer />
     </>
   );

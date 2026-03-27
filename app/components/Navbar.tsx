@@ -28,11 +28,10 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-          scrolled
+        className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled
             ? "bg-white/90 backdrop-blur-xl shadow-lg shadow-primary/5"
             : "bg-white/80 backdrop-blur-md shadow-sm"
-        }`}
+          }`}
         style={{ borderBottom: scrolled ? "1px solid rgba(190,201,197,0.3)" : "none" }}
       >
         <div className="flex justify-between items-center max-w-7xl mx-auto px-8 py-4">
@@ -46,11 +45,10 @@ export default function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className={`transition-all duration-300 font-serif hover-underline-sweep ${
-                  pathname === link.href
+                className={`transition-all duration-300 font-serif hover-underline-sweep ${pathname === link.href
                     ? "text-emerald-900 font-bold border-b-2 border-lime-500"
                     : "text-emerald-700/70 hover:text-emerald-900"
-                }`}
+                  }`}
               >
                 {link.label}
               </Link>
@@ -67,9 +65,9 @@ export default function Navbar() {
         </div>
       </nav>
       <div className={`fixed inset-0 z-40 bg-white/95 backdrop-blur-xl transition-all duration-500 md:hidden ${mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
-        <div className="flex flex-col items-center justify-center h-full gap-8 pt-16">
+        <div className="flex flex-col items-center justify-center h-full gap-8">
           {navLinks.map((link, i) => (
-              <Link key={link.label} href={link.href} onClick={() => setMobileMenuOpen(false)}
+            <Link key={link.label} href={link.href} onClick={() => setMobileMenuOpen(false)}
               className={`text-2xl transition-all duration-500 font-serif ${mobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"} ${pathname === link.href ? "text-primary font-bold" : "text-emerald-700/70"}`}
               style={{ transitionDelay: `${i * 80}ms` }}>
               {link.label}

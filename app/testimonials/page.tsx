@@ -4,7 +4,6 @@ import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ScrollReveal from "../components/ScrollReveal";
-import MobileBottomNav from "../components/MobileBottomNav";
 
 const IMG = {
   hero: "https://lh3.googleusercontent.com/aida-public/AB6AXuC3fhmwBcSyFgd6DQ3RnavX1-3F-Lgnbs1saJCz4aRFjLGlNmU5kgrMbz_d1fjQBCZSB4bfelEdF4Hj8mSvdp7neFaS82_8E5eXEbRKfEH_uTJfOedjyQAK0OaEXn7vl8NH--N3ZmdLUGe4fXWXGvEfS7_ifo9otYS2qWf4ePDT03oytUh5YH826QEans2VW7nJrLWu7bA7wRI0K5Ye79lolqard7zHUNitUO2nDMwKttgkPJ4KE4T1Gy6CREUnPZN3x2pM5Fg0rIw",
@@ -170,7 +169,6 @@ export default function TestimonialsPage() {
           </ScrollReveal>
         </section>
       </main>
-      <MobileBottomNav />
       <Footer />
     </>
   );
